@@ -943,6 +943,7 @@ typedef struct _cl_name_version {
 /********************************************************************************************************/
 
 /* Platform API */
+#if defined(PLATFORM_API)
 extern CL_API_ENTRY cl_int CL_API_CALL
 clGetPlatformIDs(cl_uint          num_entries,
                  cl_platform_id * platforms,
@@ -1921,6 +1922,8 @@ clEnqueueTask(cl_command_queue  command_queue,
               cl_uint           num_events_in_wait_list,
               const cl_event *  event_wait_list,
               cl_event *        event) CL_EXT_SUFFIX__VERSION_1_2_DEPRECATED;
+
+#endif /*PLATFORM_API*/
 
 #ifdef __cplusplus
 }
